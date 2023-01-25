@@ -1,3 +1,6 @@
+
+let mode;
+
 const game = new Game()
 
 function preload() {
@@ -5,6 +8,7 @@ function preload() {
 }
 
 function setup() {
+	mode = 0
 	createCanvas(2000, 1000)
 }
 

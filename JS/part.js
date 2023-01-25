@@ -1,3 +1,5 @@
+let order = 0
+
 class Part {
 	constructor(image, sx, sy, sWidth, sHeight, ingredient) {
 		this.ingredient = ingredient
@@ -12,6 +14,12 @@ class Part {
 		this.sWidth = sWidth
 		this.sHeight = sHeight
 		this.velocityY = 5
+		this.OcurrencePatty= false 
+		this.OcurrenceCheese= false 
+		this.OcurrenceTomato= false 
+		this.OcurrencePickle= false 
+		this.OcurrenceLettuce= false 
+		this.OcurrenceTopBun= false
 	}
 
     draw(){
@@ -28,37 +36,57 @@ class Part {
 		let bunY = game.bunPlayer.y + game.bunPlayer.height / 2;
 		
 		if (dist(partX, partY, bunX, bunY) <= 90){
-			console.log('HIT');
 
 			this.x = game.bunPlayer.x + game.bunPlayer.width -225
-			if(this.ingredient ==="patty"){
+
+			if(this.ingredient ==="patty" && this.OcurrencePatty== false&& order == 0){
 				this.y = 800
 				this.velocityY = 0
-
 				game.burgerMenu.trinkgeld += 100
+				this.OcurrencePatty = true
+				order+=1
 			};
 
-			if (this.ingredient ==="cheese"){
+			if (this.ingredient ==="cheese" && this.OcurrenceCheese == false && order == 1){
 				this.y = 790
 				this.velocityY = 0
+				game.burgerMenu.trinkgeld += 100
+				this.OcurrenceCheese = true
+				order+=1
 			};
 
-			if (this.ingredient ==="tomato"){
+			if (this.ingredient ==="tomato" && this.OcurrenceTomato == false && order == 2){
 				this.y = 788
 				this.velocityY = 0
+				game.burgerMenu.trinkgeld += 100
+				this.OcurrenceTomato = true
+				order+=1
 			};
-			if (this.ingredient ==="pickle"){
+			if (this.ingredient ==="pickle" && this.OcurrencePickle == false && order == 3){
 				this.y = 755
 				this.velocityY = 0
+				game.burgerMenu.trinkgeld += 100
+				this.OcurrencePickle = true
+				order+=1
 			};
-			if (this.ingredient ==="lettuce"){
+			if (this.ingredient ==="lettuce" && this.OcurrenceLettuce == false && order == 4){
 				this.y = 760
 				this.velocityY = 0
+				game.burgerMenu.trinkgeld += 100
+				this.OcurrenceLettuce = true
+				order+=1
 			};
-			if (this.ingredient ==="topBun"){
+			if (this.ingredient ==="topBun" && this.OcurrenceTopBun == false && order == 5){
 				this.y = 720
 				this.velocityY = 0
+				game.burgerMenu.trinkgeld += 100
+				this.OcurrenceTopBun = true
+				order+=1
 			};
+
+		/* 	if ( order = 6){
+
+			} */
 			
 		}
 		else {
@@ -67,14 +95,3 @@ class Part {
     }
 } 
 }
-/*this.x = game.bunPlayer.x + game.bunPlayer.width -225
-if(this.ingredient ==="patty"){
-	this.y = 800
-	
-}
-this.velocityY = 0
-
-} 
-else {
-this.velocityY = 5
-} */

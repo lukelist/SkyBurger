@@ -1,10 +1,12 @@
 class Game {
 	constructor() {
+		this.modeZero = new ModeZero()
 		this.background = new Background()
 		this.backgroundImages
 		this.burgerMenu = new BurgerMenu()
 		this.bunImage
 		this.bunPlayer = new BunPlayer()
+		this.modeZeroImages
 		this.burgerPartsImage
 		this.parts = []
 		
@@ -62,6 +64,14 @@ class Game {
 			{ src: loadImage("./Assets/Clouds 5/4.png")},
 			{ src: loadImage("./Assets/Clouds 5/5.png")},
 		]
+		this.modeZeroImages = [
+			{ src: loadImage("./Assets/Clouds 8/1.png")},
+			{ src: loadImage("./Assets/Clouds 8/2.png")},
+			{ src: loadImage("./Assets/Clouds 8/3.png")},
+			{ src: loadImage("./Assets/Clouds 8/4.png")},
+			{ src: loadImage("./Assets/Clouds 8/5.png")},
+			{ src: loadImage("./Assets/Clouds 8/6.png")}
+		]
 		this.bunImage = loadImage("./Assets/Burgers/BareBuns.png")
 		this.burgerMenu.preload()
 		this.burgerPartsImage= loadImage("./Assets/Burgers/burger_parts.png")
@@ -70,6 +80,13 @@ class Game {
 	}
 
 	draw() {
+
+		if (mode == 0){
+		this.modeZero.draw()
+		}
+
+		if (mode == 1){
+
 		clear()
 		this.background.draw()
 		this.burgerMenu.draw()
@@ -98,4 +115,11 @@ class Game {
 		})
 		
 	}
+}
+}
+
+function keyPressed(){
+	if (keyCode === ENTER) {
+		mode= 1
+}
 }
