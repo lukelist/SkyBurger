@@ -12,6 +12,7 @@ class BurgerMenu {
         this.pickle
         this.lettuce
         this.topBun
+        this.appleImage
 
     }
 
@@ -26,10 +27,12 @@ class BurgerMenu {
         this.pickle= loadImage("./Assets/Burgers/pickle.png");
         this.lettuce= loadImage("./Assets/Burgers/lettuce.png");
         this.topBun= loadImage("./Assets/Burgers/topBun.png");
+        this.appleImage = loadImage("./Assets/Burgers/Apple.png");
     }
 
 
 	draw() {
+    fill('white') 
     rect(1250, 50, 700, 900, 40, 40, 40, 40);
     image(this.burgerImg1, 1460, 100, 200, 200);
     image(this.burgerImg2, 1610, 100, 200, 200);
@@ -42,6 +45,62 @@ class BurgerMenu {
     image(this.lettuce, 1500, 675, 100, 50)
     image(this.topBun, 1500, 720, 100, 50)
 
+    if (this.trinkgeld == 100){
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,500,25);
+    }
+    if (this.trinkgeld == 200){
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,500,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,550,25);
+    }
+    if (this.trinkgeld == 300){
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,500,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,550,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,600,25);
+    }
+    if (this.trinkgeld == 400){
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,500,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,550,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,600,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,650,25);
+    }
+    if (this.trinkgeld == 500){
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,500,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,550,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,600,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,650,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,700,25);
+    }
+    if (this.trinkgeld == 600){
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,500,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,550,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,600,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,650,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,700,25);
+        fill('rgba(0,255,0, 0.25)');
+        circle(1650,750,25);
+    }
+    
+    fill('black')
     textFont('Courier New', 72)
     text('Order up!', 1400, 400);
     textFont('Courier New', 32)

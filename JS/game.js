@@ -1,15 +1,18 @@
 class Game {
 	constructor() {
 		this.modeZero = new ModeZero()
+		this.mode2won = new Mode2Won()
 		this.background = new Background()
 		this.backgroundImages
 		this.burgerMenu = new BurgerMenu()
 		this.bunImage
 		this.bunPlayer = new BunPlayer()
+		this.fruits = new Fruits()
+		this.fruitsImages
 		this.modeZeroImages
+		this.mode2wonImages
 		this.burgerPartsImage
 		this.parts = []
-		
 		this.partsImageCoordinate =[
 			{
 			ingredient : "topBun",
@@ -72,6 +75,19 @@ class Game {
 			{ src: loadImage("./Assets/Clouds 8/5.png")},
 			{ src: loadImage("./Assets/Clouds 8/6.png")}
 		]
+		this.mode2wonImages = [
+			{ src: loadImage("./Assets/Clouds 7/1.png")},
+			{ src: loadImage("./Assets/Clouds 7/2.png")},
+			{ src: loadImage("./Assets/Clouds 7/3.png")},
+			{ src: loadImage("./Assets/Clouds 7/4.png")}
+		]
+		this.fruitsImages = [
+			{ src: loadImage("./Assets/Fruits/Apple.png")},
+			{ src: loadImage("./Assets/Fruits/Banana.png")},
+			{ src: loadImage("./Assets/Fruits/Cherry.png")},
+			{ src: loadImage("./Assets/Fruits/Peach.png")},
+			{ src: loadImage("./Assets/Fruits/Watermelon.png")},
+		]
 		this.bunImage = loadImage("./Assets/Burgers/BareBuns.png")
 		this.burgerMenu.preload()
 		this.burgerPartsImage= loadImage("./Assets/Burgers/burger_parts.png")
@@ -84,6 +100,10 @@ class Game {
 		if (mode == 0){
 		this.modeZero.draw()
 		}
+
+		if (mode == 2){
+			this.mode2won.draw()
+			}
 
 		if (mode == 1){
 

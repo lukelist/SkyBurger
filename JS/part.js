@@ -22,6 +22,8 @@ class Part {
 		this.OcurrenceTopBun= false
 	}
 
+	
+
     draw(){
         image(this.image, this.x, this.y, this.width, this.height, this.sx, this.sy, this.sWidth, this.sHeight)
 		this.y += this.velocityY
@@ -84,14 +86,17 @@ class Part {
 				order+=1
 			};
 
-		/* 	if ( order = 6){
+		 	if (game.burgerMenu.trinkgeld == 600){
 
-			} */
+			setTimeout(()=> {mode=2}, 3000)
+
+			}
 			
 		}
 		else {
 			this.velocityY = 5
 
     }
+
 } 
 }
