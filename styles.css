@@ -12,3 +12,9 @@ h1 {
     margin-bottom: 5px;
    /* text-shadow: #8eacff 8px -50px 9px;*/
 }
+
+canvas {
+
+    height: 80vh;
+    width: 80vw;
+}
