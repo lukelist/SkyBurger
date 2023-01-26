@@ -1,16 +1,20 @@
+let randomFruit
+
 class Game {
 	constructor() {
 		this.modeZero = new ModeZero()
 		this.mode2won = new Mode2Won()
+		this.mode3over = new Mode3Over()
 		this.background = new Background()
 		this.backgroundImages
 		this.burgerMenu = new BurgerMenu()
 		this.bunImage
 		this.bunPlayer = new BunPlayer()
-		this.fruits = new Fruits()
 		this.fruitsImages
+		this.fruits =[]
 		this.modeZeroImages
 		this.mode2wonImages
+		this.mode3overImages
 		this.burgerPartsImage
 		this.parts = []
 		this.partsImageCoordinate =[
@@ -81,13 +85,18 @@ class Game {
 			{ src: loadImage("./Assets/Clouds 7/3.png")},
 			{ src: loadImage("./Assets/Clouds 7/4.png")}
 		]
-		this.fruitsImages = [
-			{ src: loadImage("./Assets/Fruits/Apple.png")},
-			{ src: loadImage("./Assets/Fruits/Banana.png")},
-			{ src: loadImage("./Assets/Fruits/Cherry.png")},
-			{ src: loadImage("./Assets/Fruits/Peach.png")},
-			{ src: loadImage("./Assets/Fruits/Watermelon.png")},
+		this.mode3overImages =[
+			{ src: loadImage("./Assets/Clouds 3/1.png")},
+			{ src: loadImage("./Assets/Clouds 3/2.png")},
+			{ src: loadImage("./Assets/Clouds 3/3.png")},
+			{ src: loadImage("./Assets/Clouds 3/4.png")}
 		]
+ 		this.fruitsImages = [ loadImage("./Assets/Fruits/Apple.png"),
+			 loadImage("./Assets/Fruits/Banana.png"),
+			 loadImage("./Assets/Fruits/Cherry.png"),
+			 loadImage("./Assets/Fruits/Peach.png"),
+			 loadImage("./Assets/Fruits/Watermelon.png")
+		] 
 		this.bunImage = loadImage("./Assets/Burgers/BareBuns.png")
 		this.burgerMenu.preload()
 		this.burgerPartsImage= loadImage("./Assets/Burgers/burger_parts.png")
@@ -99,6 +108,10 @@ class Game {
 
 		if (mode == 0){
 		this.modeZero.draw()
+		}
+
+		if (mode ==3){
+			this.mode3over.draw()
 		}
 
 		if (mode == 2){
@@ -135,6 +148,24 @@ class Game {
 		})
 		
 	}
+
+	if (frameCount % 120 === 0 && mode==1){
+
+		 randomFruit = Math.floor(Math.random()*this.fruitsImages.length);
+
+		let fruit= new Fruits(this.fruitsImages[randomFruit])
+		this.fruits.push(fruit)
+	}
+	this.fruits.forEach(oneFruit =>{
+		oneFruit.draw()
+	})
+
+	this.fruits = this.fruits.filter(fruit => {
+		if (fruit.y > 1200 + fruit.height){
+			return false
+		} else {return true}
+	})
+	
 }
 }
 

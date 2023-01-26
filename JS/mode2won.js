@@ -21,5 +21,3 @@ class Mode2Won {
 if (this.x <= -width) this.x = 0
 	}
 }
-
-//setTimeout(functionRef, delay)

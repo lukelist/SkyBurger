@@ -16,11 +16,11 @@ class ModeZero {
 		image(game.modeZeroImages[4].src, 0, 0, width, height)
 		image(game.modeZeroImages[5].src, 0, 0, width, height)
 
-		let intro = 'Order up! Hungry customers need their burger prepared correctly. Catch the ingredients in the correct order as they fall from the sky.'
+		let intro = 'Order up! Hungry customers need their burger prepared correctly. Catch the ingredients in the correct order as they fall from the sky, but avoid the fruit!'
 		textFont('Courier New', 72)
 		text('INSTRUCTIONS', 100, 200);
 		textFont('Courier New', 52)
-		text(intro, 100, 400, 1200, 400);
+		text(intro, 100, 400, 1400, 400);
 		textFont('Courier New', 52)
 		text('PRESS ENTER TO START', 100, 800);
 		//movement to clouds
